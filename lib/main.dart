@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_udacity_course/category.dart';
 
 void main() {
-  runApp(new MyApp());
+  runApp(UnitConverterApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({
+class UnitConverterApp extends StatelessWidget {
+  const UnitConverterApp({
     Key key,
   }) : super(key: key);
 
@@ -13,36 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: "Unit Converter",
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Hello Rectangle"),
-        ),
-        body: HelloRectange(),
-      ),
-    );
-  }
-}
-
-class HelloRectange extends StatefulWidget {
-  @override
-  HelloRectangeState createState() {
-    return new HelloRectangeState();
-  }
-}
-
-class HelloRectangeState extends State<HelloRectange> {
-  @override
-  Widget build(BuildContext context) {
-    return new Center(
-      child: Container(
-        color: Colors.greenAccent,
-        height: 200.0,
-        width: 300.0,
-        child: Center(
-          child: Text(
-            "Hello!",
-            style: Theme.of(context).textTheme.display1,
-          ),
+        backgroundColor: Colors.green[100],
+        body: Center(
+          child: Category(),
         ),
       ),
     );
