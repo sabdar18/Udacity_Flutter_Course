@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_udacity_course/category.dart';
-
+import 'package:flutter_udacity_course/category_route.dart';
 
 void main() {
   runApp(UnitConverterApp());
@@ -16,7 +15,7 @@ class UnitConverterApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Unit Converter",
-      home: Container(),
+      home: CategoryRoute(),
     );
   }
 }
