@@ -1,4 +1,4 @@
-# flutter_udacity_course
+# FLUTTER UDACITY COURSE
 
 A new Flutter project.
 

@@ -15,9 +15,35 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Hello World"),
+          title: Text("Hello Rectangle"),
         ),
-        body: Center(child: Text("Hello World"),),
+        body: HelloRectange(),
+      ),
+    );
+  }
+}
+
+class HelloRectange extends StatefulWidget {
+  @override
+  HelloRectangeState createState() {
+    return new HelloRectangeState();
+  }
+}
+
+class HelloRectangeState extends State<HelloRectange> {
+  @override
+  Widget build(BuildContext context) {
+    return new Center(
+      child: Container(
+        color: Colors.greenAccent,
+        height: 200.0,
+        width: 300.0,
+        child: Center(
+          child: Text(
+            "Hello!",
+            style: Theme.of(context).textTheme.display1,
+          ),
+        ),
       ),
     );
   }
