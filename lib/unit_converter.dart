@@ -6,12 +6,11 @@ import 'unit.dart';
 const _padding = EdgeInsets.all(16.0);
 
 class UnitConverter extends StatefulWidget {
- 
- final Category category;
+  final Category category;
 
   const UnitConverter({
     @required this.category,
-  })  : assert(category != null);
+  }) : assert(category != null);
 
   @override
   _UnitConverterState createState() => _UnitConverterState();
@@ -33,9 +32,9 @@ class _UnitConverterState extends State<UnitConverter> {
   }
 
   @override
-  void didUpdateWidget(UnitConverter old){
+  void didUpdateWidget(UnitConverter old) {
     super.didUpdateWidget(old);
-    if(old.category != widget.category){
+    if (old.category != widget.category) {
       _createDropdownMenuItems();
       _setDefaults();
     }
@@ -230,7 +229,19 @@ class _UnitConverterState extends State<UnitConverter> {
 
     return Padding(
       padding: _padding,
-      child: converter,
+      child: OrientationBuilder(
+          builder: (BuildContext context, Orientation orientation) {
+        if (orientation == Orientation.portrait) {
+          return converter;
+        } else {
+          return Center(
+            child: Container(
+              width: 450.0,
+              child: converter,
+            ),
+          );
+        }
+      }),
     );
   }
 }
